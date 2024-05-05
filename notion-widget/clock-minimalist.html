@@ -6,15 +6,23 @@
     <title>Digital Clock</title>
     <style>
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f6f6f6;
+        background-color: #f6f6f6; /* Set page background color */
+        margin: 0; /* Remove default margin */
+      }
+
+      .container {
+        position: relative; /* Set container to relative position */
+        height: 100vh; /* Full viewport height */
       }
 
       .clock {
+        position: absolute; /* Set clock to absolute position */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Center clock */
         display: flex;
         align-items: center;
+        background-color: transparent; /* Set clock background to transparent */
       }
 
       .digit {
@@ -37,10 +45,12 @@
     </style>
   </head>
   <body>
-    <div class="clock">
-      <div id="hour" class="digit"></div>
-      <div class="colon">:</div>
-      <div id="minute" class="digit"></div>
+    <div class="container">
+      <div class="clock">
+        <div id="hour" class="digit"></div>
+        <div class="colon">:</div>
+        <div id="minute" class="digit"></div>
+      </div>
     </div>
 
     <script>
