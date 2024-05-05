@@ -10,13 +10,10 @@
         font-variant-caps: all-petite-caps;
       }
 
-      .container {
-        color: #f5f5f5;
-      }
-
       .widget {
         padding: 5px 5px;
         color: #000000;
+        background-color: #f5f5f5;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -72,8 +69,8 @@
     <script>
       function dispalyGreetings(today) {
         var hrs = today.getHours();
-        var name = "Kumaa"; // Assuming this is where you set the name
-        name = name.toLowerCase(); // Convert name to lowercase
+        var name = "Kumaa";
+        name = name.toLowerCase();
         var greet;
 
         if (hrs < 12) greet = "Good Morning " + name;
