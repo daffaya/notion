@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f6f6f6;
+      }
+
+      .clock {
+        display: flex;
+        align-items: center;
+      }
+
+      .digit {
+        width: 50px;
+        height: 70px;
+        border-radius: 10px;
+        background-color: #212121;
+        color: #f6f6f6;
+        font-size: 40px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .colon {
+        font-size: 40px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div id="hour" class="digit"></div>
+      <div class="colon">:</div>
+      <div id="minute" class="digit"></div>
+    </div>
+
+    <script>
+      function updateClock() {
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+
+        // Add leading zeros if needed
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+
+        document.getElementById("hour").innerText = hours;
+        document.getElementById("minute").innerText = minutes;
+      }
+
+      // Update the clock every second
+      setInterval(updateClock, 1000);
+
+      // Initial call to set the clock immediately
+      updateClock();
+    </script>
+  </body>
+</html>
